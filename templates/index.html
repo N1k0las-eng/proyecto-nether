@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto Nether</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #111;
+            transition: all 0.4s ease;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-historia { background: white; }
+        .btn-update { background: #ddd; }
+        .btn-gamer { background: #0f0; color: black; }
+
+        section {
+            padding: 25px;
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .gamer {
+            background: #000;
+            color: #0f0;
+        }
+
+        .minecraft-block {
+            width: 120px;
+            height: 120px;
+            background: repeating-linear-gradient(
+                45deg,
+                #7cfc00,
+                #7cfc00 10px,
+                #5cbf2a 10px,
+                #5cbf2a 20px
+            );
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <button class="btn-historia" onclick="mostrar('historia')">Historia</button>
+    <button class="btn-update" onclick="mostrar('updates')">📝 Actualizaciones</button>
+</header>
+
+<section id="historia" class="active">
+    <h2>🧱 Mi Historia – Proyecto Nether</h2>
+    <p>
+        Hola, soy Nicolás Gabriel Fierro Ortega.  
+        Proyecto Nether es mi primera página web creada con Python.
+        Me gustan los videojuegos, programar y dominar Minecraft como un verdadero pro.
+    </p>
+
+    <p>
+        Hace 6 años creé mi primer mundo en Minecraft junto a mi papá.
+        Luego pasé por celular, APKs dudosos 😅, hasta que logré llegar a PC.
+    </p>
+
+    <p>
+        Hoy juego en launcher, formo parte de un clan increíble y sigo aprendiendo.
+        Gracias Atherion, Just_Glep y a mi tío por enseñarme Python.
+    </p>
+</section>
+
+<section id="updates">
+    <h2>📝 Actualizaciones</h2>
+    <ul>
+        <li>V1.1 – Historia, Tips MC, Botón</li>
+        <li>V1.2 – Actualizaciones</li>
+        <li>V1.3 – Mejora visual</li>
+        <li>V1.4 – Tips mejorados</li>
+        <li>V1.5 – Modo gamer mejorado</li>
+        <li>V1.6 – Sobre mí</li>
+        <li>V1.8 – Blog simple</li>
+        <li>V2.0 – Proyecto Nether Mejorado</li>
+    </ul>
+
+    <div class="minecraft-block"></div>
+
+    <h3>LOS TIPS MEJORADOS</h3>
+    <ol>
+        <li><b>Explora temprano:</b> Consigue hierro rápido.</li>
+        <li><b>Encanta siempre:</b> Prioriza Protección.</li>
+        <li><b>Organiza cofres:</b> Tiempo = ventaja.</li>
+    </ol>
+
+    <h3>Sobre mí</h3>
+    <p>
+        Me gusta jugar, programar y tocar guitarra.
+        Creé Proyecto Nether sin saber por qué, solo por crear algo.
+        No sé qué venga, pero sé que lo voy a poder superar.
+    </p>
+
+    <h3>Blog simple</h3>
+    <p>nose xd</p>
+</section>
+
+<footer>
+    <button class="btn-gamer" onclick="modoGamer()">🎮 Botón Secreto Gamer</button>
+    <p id="textoGamer"></p>
+    <p>Próximamente...</p>
+</footer>
+
+<script>
+    function mostrar(id) {
+        document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+    }
+
+    function modoGamer() {
+        document.body.classList.toggle("gamer");
+        document.getElementById("textoGamer").innerText =
+        "Inicio para gamers: no necesitas una PC de gama alta. Sé feliz con lo que tienes, progresa poco a poco y cumple tus sueños. Un abrazo grande <3";
+    }
+</script>
+
+</body>
+</html>
